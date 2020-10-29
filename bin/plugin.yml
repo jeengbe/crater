@@ -1,0 +1,7 @@
+name: Crater
+version: 1.0
+description: Richer explosion craters
+author: Jeengbe
+
+main: jeengbe.crater.Main
+api-version: 1.15
