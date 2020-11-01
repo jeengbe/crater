@@ -25,13 +25,12 @@ public class Main extends JavaPlugin implements Listener {
 
   @EventHandler
   public void onExplode(EntityExplodeEvent e) {
-    e.setYield(1.0f);
     List<Block> l = new ArrayList<>(e.blockList());
     Random r = new Random();
     for (Block b : e.blockList()) {
       for (Block t : trace(e.getLocation(), b.getLocation().add(0.5, 0.5, 0.5), r)) {
         if (!l.contains(t)) {
-          Blocklist.transform(e.getEntity().getType(), t, r);
+          Blocklist.transform(e.getEntityType(), t, r);
           l.add(t);
         }
       }

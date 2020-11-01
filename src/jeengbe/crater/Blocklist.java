@@ -56,6 +56,12 @@ public class Blocklist {
   }
 
   public static void transform(EntityType e, Block t, Random r) {
+    if (blocklist == null)
+      return;
+    if (!blocklist.containsKey(e))
+      return;
+    if (t.getType() == null)
+      return;
     Map<Material, Double> rep = blocklist.get(e).get(t.getType());
     if (rep == null)
       return;
